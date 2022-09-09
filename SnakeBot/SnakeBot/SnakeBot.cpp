@@ -391,6 +391,6 @@ public:
 int main()
 {
 	SnakeBot sb;
-	if (sb.Construct(640, 640, 1, 1))
+	if (sb.Construct(960, 960, 1, 1))
 		sb.Start();
 }

@@ -1,3 +1,12 @@
+/******************************************************************************
+ Author: Thomas Eberhart (ThomasEEEEEEEE)
+ Description: This header file contains logic for "creating" a hamiltonian cycle
+			  that will be passed to the main SnakeAI program. This header does
+			  not actually generate a random unique cycle. However, it instead
+			  can either create an extremely basic cycle, or it can read one in
+			  from a file.
+******************************************************************************/
+
 #pragma once
 #include <iostream>
 #include <vector>
@@ -48,13 +57,12 @@ public:
 	}
 
 	//Reads a cycle from a file
-	//The first two inputs contain the width and height of the grid. The cycle is everything afterwards.
+	//The first two inputs from the file contain the width and height of the grid. The cycle is everything afterwards.
 	static vector<int> CycleFromFile(string filename, int & Width, int & Height)
 	{
 		std::ifstream t(filename);
 		std::stringstream buffer;
 		buffer << t.rdbuf();
-
 
 		std::istream_iterator<string> begin(buffer);
 		std::istream_iterator<string> end;
