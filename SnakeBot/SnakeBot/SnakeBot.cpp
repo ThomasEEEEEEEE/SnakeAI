@@ -24,6 +24,13 @@
 			  the algorithm to find out how to finish it off and clear up these
 			  final issues. I am still quite happy with this program and am 
 			  satisfied with how much I was able to do with basically no reference.
+
+			  This program has a few controls:
+			  NUMPAD +:  Increase speed of snake
+			  NUMPAD -:  Decrease speed of snake
+			  TAB:		 Set snake to max speed
+			  BACKSPACE: Reset speed to default
+			  D:		 Toggle debug mode
 ******************************************************************************/
 
 #define OLC_PGE_APPLICATION
@@ -126,7 +133,10 @@ public:
 
 		//Reset the speed when backspace is pressed
 		if (GetKey(olc::BACK).bPressed)
+		{
+			DisableTimer = false;
 			MovesPerSecond = 3;
+		}
 
 		if (GetKey(olc::D).bPressed)
 			Debug = !Debug;
